@@ -1,2 +1,4 @@
-libexec:[ "build/libz3.so" ]
-libexec:[ "build/api/ml/dllz3ml.so" ]
+libexec:[ "build/libz3.so" { os == "linux" } 
+          "build/libz3.dylib" { os == "darwin" } ]
+libexec:[ "build/api/ml/dllz3ml.so" { os == "linux" }
+          "build/api/ml/dllz3ml.dylib" { os == "darwin" } ]
